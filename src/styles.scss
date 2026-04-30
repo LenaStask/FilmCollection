@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@use './variables' as *;
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  background-color: $color-bg;
+  padding: 0;
+}

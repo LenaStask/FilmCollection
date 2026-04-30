@@ -1,0 +1,73 @@
+@use '../../../_variables' as *;
+
+:host {
+  display: block;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 12rem;
+}
+.header__logo {
+  font-size: 2.4rem;
+  color: $color-primary;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+span {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, rgb(229, 9, 20), rgb(255, 77, 87)) text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.nav {
+  display: flex;
+  gap: 4rem;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+  padding: 0;
+}
+.nav__item {
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: $color-primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after,
+  &:active::after {
+    transform: scaleX(1);
+  }
+}
+.nav__link {
+  color: $color-text-grey;
+  text-decoration: none;
+  font-size: 4rem;
+  &:hover,
+  :active {
+    color: $color-text;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
