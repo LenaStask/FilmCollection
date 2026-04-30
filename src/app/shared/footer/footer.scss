@@ -1,0 +1,23 @@
+@use '../../../_variables' as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-bg-secondary;
+  color: $color-text-grey;
+  padding: 4rem 12rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: $color-text-grey;
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}
