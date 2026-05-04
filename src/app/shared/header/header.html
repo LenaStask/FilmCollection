@@ -4,8 +4,12 @@
   </div>
   <nav class="nav">
     <ul class="nav__list">
-      <li class="nav__item"><a class="nav__link" routerLink="/">Home</a></li>
-      <li class="nav__item"><a class="nav__link" routerLink="/about">About</a></li>
+      <li class="nav__item">
+        <a class="nav__link" (click)="navigateToHome()" routerLink="/">Home</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" (click)="navigateToAbout()" routerLink="/about">About</a>
+      </li>
     </ul>
   </nav>
 </header>
