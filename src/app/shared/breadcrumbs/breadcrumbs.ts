@@ -26,7 +26,6 @@ export class Breadcrumbs {
   }
 
   private updateBreadcrumbs(url: string) {
-    console.log('Updating breadcrumbs for URL:', url);
     const parts = url.split('/');
     const breadcrumbs: Array<{ path: string; label: string }> = [];
 
@@ -36,8 +35,6 @@ export class Breadcrumbs {
         result = `${parts[j]}/${result}`;
       }
       breadcrumbs.push({ path: result, label: parts[i] });
-
-      console.log(breadcrumbs);
     }
 
     this.pathParts.set(breadcrumbs);

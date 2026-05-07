@@ -1,0 +1,27 @@
+@use '../../../variables' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+p {
+  color: $color-text;
+}
+
+h1 {
+  font-size: 5.2rem;
+  color: $color-text;
+  margin-bottom: 1rem;
+  letter-spacing: -1.5px;
+  font-weight: 900;
+
+  p {
+    background: linear-gradient(135deg, rgb(229, 9, 20), rgb(255, 77, 87)) text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}

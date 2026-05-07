@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
+  title = input<string>('');
   private router = inject(Router);
 
   navigateToHome() {

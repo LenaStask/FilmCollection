@@ -11,5 +11,5 @@ import { Breadcrumbs } from './shared/breadcrumbs/breadcrumbs';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('FilmCollection');
+  protected readonly title = signal('FilmCollection.');
 }

@@ -1,0 +1,122 @@
+@use '../../../../variables' as *;
+
+:host {
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  background-color: $color-bg-secondary;
+  border-radius: 8px;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid $color-primary;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 3.6rem;
+    width: 3.6rem;
+    border-radius: 50%;
+    border: 1px solid $color-bg-secondary;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+    svg {
+      fill: $color-text;
+      width: 16px;
+      height: 16px;
+      transition: fill 0.2s ease;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      border-color: $color-primary;
+
+      svg {
+        fill: $color-text;
+      }
+    }
+
+    &.active {
+      background-color: $color-text;
+      border-color: $color-text;
+
+      svg {
+        fill: $color-primary;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+    gap: 8px;
+    color: $color-text;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: $color-text-grey;
+  }
+
+  &__genre {
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 8px;
+    font-size: 0.85rem;
+    color: $color-text-grey;
+  }
+
+  &__rating {
+    font-weight: 700;
+    color: $color-text;
+  }
+}

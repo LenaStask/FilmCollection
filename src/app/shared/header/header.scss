@@ -2,6 +2,12 @@
 
 :host {
   display: block;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  background-color: $color-bg;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
 }
 .header {
   display: flex;
