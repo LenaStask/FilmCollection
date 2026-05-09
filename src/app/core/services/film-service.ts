@@ -17,4 +17,10 @@ export class FilmService {
       console.log('Films loaded successfully');
     });
   }
+
+  toggleFavorite(film: Film) {
+    this.films.update((currentFilms) =>
+      currentFilms.map((f) => (f.id === film.id ? { ...f, isFavorite: !f.isFavorite } : f)),
+    );
+  }
 }

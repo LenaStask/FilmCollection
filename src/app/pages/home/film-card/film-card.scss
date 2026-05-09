@@ -38,7 +38,7 @@
     height: 3.6rem;
     width: 3.6rem;
     border-radius: 50%;
-    border: 1px solid $color-bg-secondary;
+    border: 1px solid $color-text-grey;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -63,6 +63,9 @@
       svg {
         fill: $color-text;
       }
+    }
+    &.liked {
+      background-color: $color-primary;
     }
 
     &.active {
