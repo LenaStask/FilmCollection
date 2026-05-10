@@ -1,0 +1,27 @@
+@if (film(); as f) {
+  <div class="detail">
+    <div class="detail__poster">
+      <img class="detail__image" [src]="f.posterUrl" [alt]="f.title" />
+    </div>
+    <div class="detail__info">
+      <div class="detail__meta">
+        <span class="detail__genre">{{ f.genre }}</span>
+        <span class="detail__year">{{ f.year }}</span>
+      </div>
+      <h1 class="detail__title">{{ f.title }}</h1>
+      <div class="detail__stats">
+        <div class="detail__stat">
+          <span class="detail__stat-label">Rating</span>
+          <span class="detail__stat-value">⭐ {{ f.rating }}</span>
+        </div>
+        <div class="detail__stat">
+          <span class="detail__stat-label">Duration</span>
+          <span class="detail__stat-value">{{ f.duration }} min</span>
+        </div>
+      </div>
+      <p class="detail__description">{{ f.description }}</p>
+    </div>
+  </div>
+} @else {
+  <p class="detail__loading">Loading...</p>
+}

@@ -1,0 +1,86 @@
+@use '../../../variables' as *;
+
+.detail {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  padding: 48px;
+  color: $color-text;
+
+  &__image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: block;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__genre {
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  &__year {
+    color: $color-text-grey;
+    font-size: 0.9rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-text-grey;
+  }
+
+  &__stat-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $color-text-grey;
+    margin: 0;
+  }
+
+  &__loading {
+    font-size: 1.5rem;
+    color: $color-text-grey;
+    text-align: center;
+    padding: 48px;
+  }
+}

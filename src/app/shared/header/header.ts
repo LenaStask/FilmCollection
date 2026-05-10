@@ -9,13 +9,4 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Header {
   title = input<string>('');
-  private router = inject(Router);
-
-  navigateToHome() {
-    this.router.navigate(['/home']);
-  }
-
-  navigateToAbout() {
-    this.router.navigate(['/about']);
-  }
 }
