@@ -13,10 +13,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 12rem;
+  padding: $page-y $page-x;
 }
 .header__logo {
-  font-size: 2.4rem;
+  font-size: $font-xl;
   color: $color-primary;
   text-decoration: none;
   display: flex;
@@ -29,13 +29,13 @@ span {
   background: linear-gradient(135deg, rgb(229, 9, 20), rgb(255, 77, 87)) text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 5rem;
+  font-size: $font-hero;
   font-weight: 900;
   letter-spacing: -0.5px;
 }
 .nav {
   display: flex;
-  gap: 4rem;
+  gap: $space-xl;
 }
 .nav__list {
   list-style: none;
@@ -69,7 +69,7 @@ span {
 .nav__link {
   color: $color-text-grey;
   text-decoration: none;
-  font-size: 4rem;
+  font-size: $font-nav;
   &:hover,
   :active {
     color: $color-text;

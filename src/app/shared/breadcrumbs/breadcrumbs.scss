@@ -1,19 +1,19 @@
 @use '../../../variables' as *;
 
 .breadcrumbs {
-  padding: 4rem 12rem;
+  padding: $page-y $page-x;
   color: $color-text-grey;
   border-bottom: 1px solid $color-border;
   a {
     text-decoration: none;
-    font-size: 3rem;
+    font-size: $font-lg;
     color: $color-text-grey;
     &:hover {
       color: $color-primary;
     }
   }
   span {
-    font-size: 3rem;
+    font-size: $font-lg;
     color: $color-text-grey;
   }
 }

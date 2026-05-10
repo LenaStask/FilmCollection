@@ -5,16 +5,16 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  gap: 4rem;
+  gap: $space-xl;
 }
 p {
   color: $color-text;
 }
 
 h1 {
-  font-size: 5.2rem;
+  font-size: $font-hero;
   color: $color-text;
-  margin-bottom: 1rem;
+  margin-bottom: $space-sm;
   letter-spacing: -1.5px;
   font-weight: 900;
 

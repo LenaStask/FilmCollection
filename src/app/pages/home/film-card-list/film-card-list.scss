@@ -3,12 +3,12 @@
 :host {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: $space-xl;
   justify-items: center;
-  margin: 2rem 0;
+  margin: $space-lg 0;
 }
 p {
   grid-column: 1 / -1;
-  font-size: 1.5rem;
+  font-size: $font-lg;
   color: $color-text-grey;
 }

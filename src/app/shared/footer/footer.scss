@@ -6,15 +6,14 @@
   align-items: center;
   background-color: $color-bg-secondary;
   color: $color-text-grey;
-  padding: 4rem 12rem;
+  padding: $page-y $page-x;
 }
 
 .footer__links {
   display: flex;
-  gap: 16px;
-  margin-top: 8px;
   align-items: center;
-  gap: 8px;
+  gap: $space-sm;
+  margin-top: $space-sm;
   text-decoration: none;
   color: $color-text-grey;
   &:hover,

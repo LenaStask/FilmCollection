@@ -18,12 +18,12 @@
 
   &__input {
     width: 100%;
-    padding: 10px 16px 10px 42px;
+    padding: 1rem $space-md 1rem 4.2rem;
     background-color: $color-bg-secondary;
     border: 1px solid $color-border;
     border-radius: 8px;
     color: $color-text;
-    font-size: 2rem;
+    font-size: $font-lg;
     outline: none;
     transition: border-color 0.2s ease;
 
