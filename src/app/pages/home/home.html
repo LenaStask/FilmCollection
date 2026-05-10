@@ -2,4 +2,5 @@
   Discover Your Next
   <p>Favorite Film</p>
 </h1>
-<app-film-card-list [allFilms]="filmService.films()"></app-film-card-list>
+<app-search></app-search>
+<app-film-card-list [allFilms]="filmService.filteredFilms()"></app-film-card-list>

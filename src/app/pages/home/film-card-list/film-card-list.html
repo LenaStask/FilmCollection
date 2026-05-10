@@ -1,5 +1,6 @@
 @for (film of allFilms(); track film.id) {
   <app-film-card [film]="film"></app-film-card>
-} @empty {
-  <p>No films found. Check your JSON file path!</p>
+}
+@if (allFilms().length === 0) {
+  <p>No films found.</p>
 }

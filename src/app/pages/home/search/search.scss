@@ -1,0 +1,38 @@
+@use '../../../../variables' as *;
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+
+  &__icon {
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    color: $color-text-grey;
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    background-color: $color-bg-secondary;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    color: $color-text;
+    font-size: 2rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: $color-text-grey;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+}
