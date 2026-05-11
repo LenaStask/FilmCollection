@@ -1,6 +1,6 @@
 <div class="card" [routerLink]="['/film', film().id]">
   <img class="card__image" [src]="film().posterUrl" [alt]="film().title" />
-  <button class="card__like" [class.liked]="film().isFavorite" (click)="toggleFavorite(film())">
+  <button class="card__like" [class.liked]="film().isFavorite" (click)="toggleFavorite($event)">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"

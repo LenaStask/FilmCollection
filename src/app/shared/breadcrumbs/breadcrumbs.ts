@@ -1,19 +1,19 @@
 import { Component, signal, WritableSignal, inject, effect } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { RouterLink, Router, NavigationEnd } from '@angular/router';
+import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
+import { FilmService } from '../../core/services/film-service';
 
 @Component({
   selector: 'app-breadcrumbs',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './breadcrumbs.html',
   styleUrl: './breadcrumbs.scss',
 })
 export class Breadcrumbs {
   private router = inject(Router);
+  private filmService = inject(FilmService);
 
-  public readonly pathParts: WritableSignal<Array<{ path: string; label: string }>> = signal([
-    { path: '/home', label: 'home' },
-  ]);
+  public readonly pathParts: WritableSignal<Array<{ path: string; label: string }>> = signal([]);
 
   private routerEvents = toSignal(this.router.events);
   constructor() {
@@ -25,16 +25,23 @@ export class Breadcrumbs {
     });
   }
 
-  private updateBreadcrumbs(url: string) {
-    const parts = url.split('/');
-    const breadcrumbs: Array<{ path: string; label: string }> = [];
+  private readonly hiddenSegments = new Set(['film']);
 
-    for (let i = parts.length - 1; i > 0; i--) {
-      let result = '';
-      for (let j = i; j > 0; j--) {
-        result = `${parts[j]}/${result}`;
+  private updateBreadcrumbs(url: string) {
+    const parts = url.split('/').filter(Boolean);
+    const breadcrumbs: Array<{ path: string; label: string }> = [{ path: '/home', label: 'Home' }];
+
+    let cumulativePath = '';
+    for (const part of parts) {
+      cumulativePath += `/${part}`;
+      if (this.hiddenSegments.has(part)) continue;
+      const id = Number(part);
+      let label = part;
+      if (!isNaN(id)) {
+        const film = this.filmService.films().find((f) => f.id === id);
+        if (film) label = film.title;
       }
-      breadcrumbs.push({ path: result, label: parts[i] });
+      breadcrumbs.push({ path: cumulativePath, label });
     }
 
     this.pathParts.set(breadcrumbs);

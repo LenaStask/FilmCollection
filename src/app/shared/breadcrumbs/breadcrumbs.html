@@ -1,6 +1,6 @@
 <div class="breadcrumbs">
   @for (part of pathParts(); track $index) {
-    <a [routerLink]="part.path">{{ part.label }}</a>
+    <a [routerLink]="part.path" routerLinkActive="active">{{ part.label }}</a>
     @if ($index < pathParts().length - 1) {
       <span> / </span>
     }

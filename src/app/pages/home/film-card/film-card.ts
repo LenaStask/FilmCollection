@@ -14,7 +14,8 @@ export class FilmCard {
   film = input.required<Film>();
   filmService = inject(FilmService);
 
-  toggleFavorite(film: Film) {
-    this.filmService.toggleFavorite(film);
+  toggleFavorite(event: MouseEvent) {
+    event.stopPropagation();
+    this.filmService.toggleFavorite(this.film());
   }
 }

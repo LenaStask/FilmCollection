@@ -4,8 +4,7 @@ import { Home } from './pages/home/home';
 import { FilmDetail } from './pages/film-detail/film-detail';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: Home },
+  { path: '', component: Home },
   { path: 'about', component: About },
   { path: 'film/:id', component: FilmDetail },
 ];
